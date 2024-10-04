@@ -5,26 +5,77 @@
     box-sizing: border-box;
 }
 
+/* Réglages généraux */
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #041821;
+    background-color: #0C1C2E;
     color: #ffffff;
 }
 
+/* En-tête */
 header {
-    text-align: center;
-    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #0C1C2E;
+    position: relative;
 }
 
+/* Logo */
+.logo {
+    font-family: 'Yeseva One', serif;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+/* Icônes sociales alignées à droite */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    position: absolute;
+    right: 40px;
+    top: 20px;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #1abc9c; /* Couleur au survol */
+}
+
+/* Section d'introduction */
+.intro {
+    padding: 50px 40px;
+    text-align: left;
+}
+
+.intro p {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.intro .highlight {
+    color: #1abc9c;
+    font-weight: bold;
+}
+
+/* Titre principal */
 h1 {
-    font-family: 'Yeseva One', cursive;
-    font-size: 36px;
+    font-family: 'Yeseva One', serif;
+    font-size: 42px;
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
 p {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.5;
+    color: #ffffff;
 }
 
 .highlight {
@@ -32,25 +83,57 @@ p {
     font-weight: bold;
 }
 
+/* Section Header */
+.header-left {
+    text-align: left;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Logos dans l'en-tête */
+.logo {
+    width: 40px;
+    height: auto;
+    margin-left: 10px;
+}
+
+/* Galerie d'images */
 .gallery {
-    margin: 20px auto;
+    margin: 30px auto;
     max-width: 1200px;
 }
 
-.filter-bar {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
+/* Barre de filtres */
+/* Liens des filtres */
 .filter-bar a {
-    color: #ffffff;
+    color: #ffffff; /* Couleur du texte */
     text-decoration: none;
-    margin: 0 15px;
+    margin: 0 15px; /* Espacement entre chaque filtre */
     font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    padding: 10px 15px; /* Padding pour augmenter la zone cliquable */
+    border: 2px solid transparent; /* Par défaut, sans bordure */
+    transition: all 0.3s ease; /* Transition douce pour les changements */
 }
 
+/* Effet au survol */
+.filter-bar a:hover {
+    color: #1abc9c; /* Couleur verte au survol */
+    border-color: #1abc9c; /* Bordure verte lors du survol */
+}
+
+/* Filtre actif */
+.filter-bar a.active {
+    color: #1abc9c; /* Couleur verte pour l'élément actif */
+    font-weight: bold; /* Texte en gras pour le filtre actif */
+    border-bottom: 2px solid #1abc9c; /* Soulignement pour l'actif */
+}
+
+/* Grille d'images */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -63,6 +146,7 @@ p {
     display: block;
 }
 
+/* Footer */
 footer {
     text-align: center;
     margin-top: 40px;
@@ -70,12 +154,14 @@ footer {
     color: #666666;
 }
 
-
-.grid img:nth-child(n + 10) {
+/* Cacher les images supplémentaires à partir de la 12ème */
+.grid img:nth-child(n + 12) {
     display: none;
 }
 
+/* ================= RESPONSIVE ================= */
 
+/* Tablettes */
 @media (max-width: 768px) {
     h1 {
         font-size: 28px;
@@ -84,8 +170,18 @@ footer {
     .filter-bar a {
         font-size: 14px;
     }
+
+    .social-icons {
+        right: 20px;
+        top: 10px;
+    }
+
+    .intro p {
+        font-size: 20px;
+    }
 }
 
+/* Smartphones */
 @media (max-width: 480px) {
     h1 {
         font-size: 24px;
@@ -97,5 +193,20 @@ footer {
 
     .grid {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .social-icons {
+        right: 10px;
+        top: 10px;
+        gap: 10px;
+    }
+    
+    .filter-bar a {
+        font-size: 12px;
+        margin: 0 10px;
+    }
+
+    .intro p {
+        font-size: 18px;
     }
 }
