@@ -14,6 +14,7 @@ body {
 
 /* En-tête */
 header {
+    font-family: 'Yeseva One', serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,7 +67,7 @@ header {
 
 /* Titre principal */
 h1 {
-    font-family: 'Yeseva One', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 42px;
     color: #ffffff;
     margin-bottom: 10px;
@@ -133,56 +134,91 @@ p {
 
 /* Responsive - Mobile Version */
 @media (max-width: 600px) {
-  /* Modifie la grille pour rester sur 3 colonnes sur mobile */
-  .grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
-    gap: 10px; /* Espace entre les images */
+    header {
+      padding: 20px;
+      flex-direction: column; /* Empile le logo et les icônes sociales verticalement */
+      align-items: center; /* Centre tous les éléments du header */
+    }
+  
+    .logo {
+      margin-bottom: 20px; /* Ajoute un espace sous le logo */
+    }
+  
+    .social-icons {
+      justify-content: center; /* Centre les icônes sociales */
+      margin-top: 10px;
+    }
+  
+    .intro {
+      padding: 30px 20px; /* Réduit le padding autour de l'introduction */
+      text-align: center; /* Centre le texte de l'introduction */
+    }
+  
+    .grid {
+      grid-template-columns: repeat(3, 1fr); /* 2 colonnes pour la galerie sur mobile */
+      gap: 10px; /* Réduit l'espacement entre les images */
+    }
+  
+    .grid img:nth-child(n + 10) {
+      display: none; /* Cache les images après la 6ème pour alléger la page sur mobile */
+    }
   }
+  
 
-  /* Cache les images après la 9ème pour alléger la page sur mobile */
-  .grid img:nth-child(n + 10) {
-    display: none;
+/* Tablet version */
+@media (min-width: 601px) and (max-width: 1024px) {
+    header {
+      padding: 30px 40px; /* Moins de padding que sur la version PC */
+      justify-content: space-between; /* Logo à gauche, icônes à droite */
+    }
+  
+    .intro {
+      padding: 40px 50px; /* Moins de padding que sur la version PC */
+    }
+  
+    .grid {
+      grid-template-columns: repeat(5, 1fr); /* Grille de 3 colonnes sur tablette */
+      gap: 15px; /* Espacement intermédiaire entre les images */
+    }
+  
+    .grid img:nth-child(n + 16) {
+      display: none; /* Cache les images après la 9ème sur tablette */
+    }
   }
+  
 
-  /* Ajuste l'en-tête pour aligner les icônes sous le logo */
-  header {
-    flex-direction: column; /* Empile les éléments verticalement */
-    justify-content: center;
-    align-items: center; /* Centre les éléments dans l'en-tête */
-    padding: 20px; /* Ajoute du padding autour de l'en-tête pour l'aération */
-  }
+/* PC version */
+@media (min-width: 1024px) {
+    header {
+      padding: 40px 60px; /* Augmente le padding autour du header */
+      justify-content: space-between; /* Le logo à gauche et les icônes sociales à droite */
+    }
+  
+    .intro {
+      padding: 60px 100px; /* Augmente le padding pour la section intro */
+      text-align: left; /* Texte aligné à gauche */
+    }
+  
+    .grid {
+      grid-template-columns: repeat(4, 1fr); /* Grille de 4 colonnes pour la galerie */
+      gap: 20px; /* Espacement généreux entre les images */
+    }
 
-  .logo {
-    margin-bottom: 10px; /* Ajoute un espace entre le logo et les icônes */
-    text-align: center; /* Centre le texte du logo */
+    .grid img:nth-child(n + 16) {
+        display: none; /* Cache les images après la 9ème sur tablette */
+    }
+    
+    .filter-bar {
+      text-align: center; /* Barre de filtres centrée */
+      margin-bottom: 40px; /* Plus d'espace sous la barre de filtres */
+    }
+    
+    .filter-bar a {
+      margin: 0 20px; /* Augmenter l'espacement entre les filtres */
+      font-size: 18px; /* Augmenter la taille de la police pour la version PC */
+    }
   }
-
-  .social-icons {
-    position: static; /* Place les icônes sous le logo */
-    margin-top: 10px; /* Ajoute un espace entre le logo et les icônes */
-    justify-content: center; /* Centre les icônes socialement */
-  }
-}
-
-/* Responsive - Tablettes */
-@media (min-width: 601px) and (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
-  .grid img:nth-child(n + 16) {
-    display: none;
-  }
-}
-
-/* Desktop */
-@media (min-width: 769px) {
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .grid img:nth-child(n + 16) {
-    display: none;
-  }
-}
+  
 
 /* Footer */
 footer {
