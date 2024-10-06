@@ -83,23 +83,6 @@ p {
     font-weight: bold;
 }
 
-/* Section Header */
-.header-left {
-    text-align: left;
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
-}
-
-/* Logos dans l'en-tête */
-.logo {
-    width: 40px;
-    height: auto;
-    margin-left: 10px;
-}
-
 /* Galerie d'images */
 .gallery {
     margin: 30px auto;
@@ -107,43 +90,73 @@ p {
 }
 
 /* Barre de filtres */
-/* Liens des filtres */
 .filter-bar a {
-    color: #ffffff; /* Couleur du texte */
+    color: #ffffff;
     text-decoration: none;
-    margin: 0 15px; /* Espacement entre chaque filtre */
+    margin: 0 15px;
     font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    padding: 10px 15px; /* Padding pour augmenter la zone cliquable */
-    border: 2px solid transparent; /* Par défaut, sans bordure */
-    transition: all 0.3s ease; /* Transition douce pour les changements */
+    padding: 10px 15px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
 }
 
-/* Effet au survol */
+/* Garde la couleur initiale au survol */
 .filter-bar a:hover {
-    color: #1abc9c; /* Couleur verte au survol */
-    border-color: #1abc9c; /* Bordure verte lors du survol */
+    color: #ffffff; /* Reste blanc au survol */
+    border-color: transparent; /* Pas de changement de bordure */
 }
 
-/* Filtre actif */
-.filter-bar a.active {
-    color: #1abc9c; /* Couleur verte pour l'élément actif */
-    font-weight: bold; /* Texte en gras pour le filtre actif */
-    border-bottom: 2px solid #1abc9c; /* Soulignement pour l'actif */
+/* Rectangle vert permanent pour "Portrait" */
+.filter-bar a:first-child {
+    color: #ffffff;
+    background-color: #1abc9c;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
 }
 
 /* Grille d'images */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
 }
 
+/* Images */
 .grid img {
     width: 100%;
     height: auto;
     display: block;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid img:nth-child(n + 10) {
+    display: none;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .grid img:nth-child(n + 16) {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid img:nth-child(n + 16) {
+    display: none;
+  }
 }
 
 /* Footer */
@@ -152,61 +165,4 @@ footer {
     margin-top: 40px;
     font-size: 14px;
     color: #666666;
-}
-
-/* Cacher les images supplémentaires à partir de la 12ème */
-.grid img:nth-child(n + 12) {
-    display: none;
-}
-
-/* ================= RESPONSIVE ================= */
-
-/* Tablettes */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 28px;
-    }
-    
-    .filter-bar a {
-        font-size: 14px;
-    }
-
-    .social-icons {
-        right: 20px;
-        top: 10px;
-    }
-
-    .intro p {
-        font-size: 20px;
-    }
-}
-
-/* Smartphones */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 24px;
-    }
-    
-    p {
-        font-size: 16px;
-    }
-
-    .grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-
-    .social-icons {
-        right: 10px;
-        top: 10px;
-        gap: 10px;
-    }
-    
-    .filter-bar a {
-        font-size: 12px;
-        margin: 0 10px;
-    }
-
-    .intro p {
-        font-size: 18px;
-    }
 }
