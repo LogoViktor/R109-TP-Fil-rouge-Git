@@ -85,7 +85,7 @@ p {
 
 /* Galerie d'images */
 .gallery {
-    margin: 30px auto;
+    margin: 40px auto;
     max-width: 1200px;
 }
 
@@ -109,7 +109,7 @@ p {
 }
 
 /* Rectangle vert permanent pour "Portrait" */
-.filter-bar a:first-child {
+.filter-bar a:nth-child(2) {
     color: #ffffff;
     background-color: #1abc9c;
     padding: 5px 10px;
@@ -131,17 +131,41 @@ p {
     display: block;
 }
 
-/* Responsive */
+/* Responsive - Mobile Version */
 @media (max-width: 600px) {
+  /* Modifie la grille pour rester sur 3 colonnes sur mobile */
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+    gap: 10px; /* Espace entre les images */
   }
+
+  /* Cache les images après la 9ème pour alléger la page sur mobile */
   .grid img:nth-child(n + 10) {
     display: none;
   }
+
+  /* Ajuste l'en-tête pour aligner les icônes sous le logo */
+  header {
+    flex-direction: column; /* Empile les éléments verticalement */
+    justify-content: center;
+    align-items: center; /* Centre les éléments dans l'en-tête */
+    padding: 20px; /* Ajoute du padding autour de l'en-tête pour l'aération */
+  }
+
+  .logo {
+    margin-bottom: 10px; /* Ajoute un espace entre le logo et les icônes */
+    text-align: center; /* Centre le texte du logo */
+  }
+
+  .social-icons {
+    position: static; /* Place les icônes sous le logo */
+    margin-top: 10px; /* Ajoute un espace entre le logo et les icônes */
+    justify-content: center; /* Centre les icônes socialement */
+  }
 }
 
-@media (min-width: 601px) and (max-width: 1024px) {
+/* Responsive - Tablettes */
+@media (min-width: 601px) and (max-width: 768px) {
   .grid {
     grid-template-columns: repeat(5, 1fr);
   }
@@ -150,7 +174,8 @@ p {
   }
 }
 
-@media (min-width: 1025px) {
+/* Desktop */
+@media (min-width: 769px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
   }
