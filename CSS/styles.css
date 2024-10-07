@@ -58,6 +58,8 @@ header {
 .intro {
   padding: 50px 40px;
   text-align: left; /* Aligné à gauche */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .intro h1 {
@@ -137,6 +139,10 @@ header {
       align-items: center; /* Centre tous les éléments du header */
   }
 
+  body {
+    margin: 0 5%; /* Ajoute des marges légères sur les côtés (5% de chaque côté) */
+ }
+
   .logo {
       margin-bottom: 20px; /* Ajoute un espace sous le logo */
   }
@@ -149,6 +155,7 @@ header {
 
   .intro {
       padding: 30px 20px; /* Réduit le padding autour de l'introduction */
+      max-width: 100%; /* Prend toute la largeur disponible */
       text-align: left; /* Aligné à gauche */
   }
 
@@ -177,7 +184,7 @@ header {
   }
 
   .filter-bar a {
-      font-size: 11px; /* Réduction de la taille de police pour la version mobile */
+      font-size: 9px; /* Réduction de la taille de police pour la version mobile */
       padding: 2px 4px; /* Réduction du padding interne des filtres */
   }
 }
@@ -189,8 +196,14 @@ header {
       justify-content: space-between; /* Logo à gauche, icônes à droite */
   }
 
+  /* Bordures légères pour tablette */
+  body {
+      margin: 0 3%; /* Ajoute des marges légères sur les côtés (3% de chaque côté) */
+  }
+
   .intro {
       padding: 40px 50px; /* Moins de padding que sur la version PC */
+      max-width: 100%; /* Prend toute la largeur disponible avec les bordures */
   }
 
   .grid {
@@ -210,8 +223,14 @@ header {
       justify-content: space-between; /* Le logo à gauche et les icônes sociales à droite */
   }
 
+  /* Bordures légères pour laptop/PC */
+  body {
+      margin: 0 5%; /* Ajoute des marges légères sur les côtés (5% de chaque côté) */
+  }
+
   .intro {
       padding: 60px 100px; /* Augmente le padding pour la section intro */
+      max-width: 100%; /* Assure que tout soit aligné correctement avec les images */
       text-align: left; /* Texte aligné à gauche */
   }
 
