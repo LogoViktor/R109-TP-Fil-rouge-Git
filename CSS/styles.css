@@ -205,7 +205,7 @@ p {
 }
 
 /* PC version */
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   header {
       padding: 40px 60px; /* Augmente le padding autour du header */
       justify-content: space-between; /* Le logo à gauche et les icônes sociales à droite */
