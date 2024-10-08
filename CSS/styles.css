@@ -50,9 +50,7 @@ header {
   text-decoration: none;
 }
 
-.social-icons a:hover {
-  color: #1abc9c; /* Couleur au survol */
-}
+
 
 /* Section d'introduction */
 .intro {
